@@ -17,4 +17,4 @@ void setup() {
 void loop() {
   // no need to call stepper.loop()
   // it's called by the timer interrupt handler
-}}
+}
