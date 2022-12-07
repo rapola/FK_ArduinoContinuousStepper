@@ -95,6 +95,9 @@ public:
 
   // Tells wether the shaft is currently spinning.
   bool isSpinning() const;
+  
+  // Get counted steps since power on and running
+  uint32_t getCntval() const;
 };
 ```
 
