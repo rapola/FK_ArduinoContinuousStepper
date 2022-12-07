@@ -88,6 +88,16 @@ public:
   bool isSpinning() const {
     return _status == STEP || _status == SKIP;
   }
+  
+  
+  uint32_t getCntval() const {
+    return _stpcnt;
+  }
+  
+  
+  
+  
+  
 
 protected:
   void tick() override {
@@ -105,6 +115,11 @@ protected:
         if (_status == STEP) {
           writeDir(_currentSpeed >= 0 ? HIGH : LOW);
           writeStep(HIGH);
+         
+         
+          _stpcnt ++;
+          
+          
         }
 
         updateSpeed();
@@ -176,7 +191,9 @@ private:
   time_t _lastTick = 0, _interval = 0;
   float_t _targetSpeed = 0, _currentSpeed = 0, _acceleration = 1000, _minSpeedForAcceleration = sqrt(1000);
   bool _stepLevel = LOW, _dirLevel = LOW, _enablePinActiveLevel = HIGH;
-
+  
+  uint32_t _stpcnt = 0;
+  
   enum Status {
     OFF,
     WAIT,

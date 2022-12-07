@@ -1,9 +1,10 @@
 // This example requires the TimerThree library.
 // https://github.com/PaulStoffregen/TimerThree
 
-#include <ContinuousStepper_Timer3.h>
-
-const uint8_t stepPin = 2;
+//#include <ContinuousStepper_Timer3.h>
+#include "src/ContinuousStepper_Timer3.h"
+//const uint8_t stepPin = 2;
+const uint8_t stepPin = 13;
 const uint8_t dirPin = 3;
 
 ContinuousStepper_Timer3 stepper;
